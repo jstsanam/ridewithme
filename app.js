@@ -31,9 +31,9 @@ app.use(passport.session());
 
 try {
   mongoose.connect(
-    "mongodb+srv://velectra_ridewithme:" +
+    "mongodb+srv://jstsanam:" +
       process.env.MONGOPASS +
-      "@cluster0.j2d7m.mongodb.net/ridewithmeDB",
+      "@cluster0.uynmuf0.mongodb.net/ridewithmeDB",
     { useNewUrlParser: true, useUnifiedTopology: true }
   );
   console.log("MongoDB connected successfully");
