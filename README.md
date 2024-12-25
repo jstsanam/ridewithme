@@ -45,7 +45,7 @@ npm install
 4. Run the application:
 
 ```bash
-node app.js
+node index.js
 ```
 
 ## Environment Variables

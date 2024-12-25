@@ -12,6 +12,8 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
 const app = express();
 app.set("port", process.env.PORT || 3000);
+const path = require("path");
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
@@ -33,7 +35,8 @@ try {
     "mongodb+srv://jstsanam:" +
       process.env.MONGOPASS +
       "@cluster0.uynmuf0.mongodb.net/ridewithmeDB",
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    { connectTimeoutMS: 30000 }
   );
   console.log("MongoDB connected successfully");
 } catch (error) {
